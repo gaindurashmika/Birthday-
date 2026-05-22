@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>For Someone Special ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+/* Animated Background */
+
+.bg{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at top left,#ff008044,transparent 30%),
+    radial-gradient(circle at bottom right,#6600ff55,transparent 30%),
+    radial-gradient(circle at center,#111111,#000000);
+    animation:bgMove 10s ease infinite alternate;
+}
+
+@keyframes bgMove{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.1);
+    }
+}
+
+/* Stars */
+
+.stars{
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    opacity:0.8;
+    animation:twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{
+        opacity:0.2;
+        transform:scale(1);
+    }
+    to{
+        opacity:1;
+        transform:scale(1.8);
+    }
+}
+
+/* Main Container */
+
+.container{
+    position:relative;
+    z-index:10;
+    text-align:center;
+    width:90%;
+    max-width:900px;
+}
+
+/* Glass Card */
+
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:30px;
+    padding:50px 30px;
+    box-shadow:
+    0 0 40px rgba(255,0,128,0.2),
+    0 0 100px rgba(128,0,255,0.1);
+    animation:fadeIn 2s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Title */
+
+.main-title{
+    color:white;
+    font-size:2.5rem;
+    margin-bottom:10px;
+    font-weight:600;
+    letter-spacing:2px;
+}
+
+.sub{
+    color:#bbbbbb;
+    margin-bottom:40px;
+    font-size:1rem;
+}
+
+/* Heart */
+
+.heart-wrapper{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.heart{
+    position:relative;
+    width:130px;
+    height:130px;
+    background:#ff0055;
+    transform:rotate(-45deg);
+    cursor:pointer;
+    animation:beat 1.2s infinite;
+    box-shadow:
+    0 0 20px #ff0055,
+    0 0 60px #ff0055;
+    transition:0.4s;
+}
+
+.heart:hover{
+    transform:rotate(-45deg) scale(1.1);
+}
+
+.heart::before,
+.heart::after{
+    content:'';
+    position:absolute;
+    width:130px;
+    height:130px;
+    background:#ff0055;
+    border-radius:50%;
+}
+
+.heart::before{
+    top:-65px;
+    left:0;
+}
+
+.heart::after{
+    left:65px;
+    top:0;
+}
+
+@keyframes beat{
+    0%{
+        transform:rotate(-45deg) scale(1);
+    }
+    50%{
+        transform:rotate(-45deg) scale(1.08);
+    }
+    100%{
+        transform:rotate(-45deg) scale(1);
+    }
+}
+
+/* Message */
+
+.message-box{
+    display:none;
+    margin-top:40px;
+    animation:fadeMessage 2s ease;
+}
+
+@keyframes fadeMessage{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.message{
+    color:#f2f2f2;
+    line-height:2;
+    font-size:1.05rem;
+    text-align:left;
+    white-space:pre-line;
+}
+
+/* Final Quote */
+
+.quote{
+    margin-top:40px;
+    font-size:2rem;
+    font-family:'Great Vibes',cursive;
+    color:#ff8dc7;
+    text-shadow:0 0 20px #ff0080;
+}
+
+/* Floating Hearts */
+
+.float-heart{
+    position:absolute;
+    color:#ff4d94;
+    animation:floatUp linear infinite;
+    opacity:0.5;
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(100vh) scale(0);
+        opacity:0;
+    }
+
+    20%{
+        opacity:0.7;
+    }
+
+    to{
+        transform:translateY(-120vh) scale(1.5);
+        opacity:0;
+    }
+}
+
+/* Music Button */
+
+.music-btn{
+    position:absolute;
+    top:20px;
+    right:20px;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,0.08);
+    color:white;
+    font-size:1.2rem;
+    cursor:pointer;
+    backdrop-filter:blur(10px);
+    transition:0.3s;
+}
+
+.music-btn:hover{
+    transform:scale(1.1);
+    background:#ff0055;
+}
+
+/* Responsive */
+
+@media(max-width:700px){
+
+    .main-title{
+        font-size:1.8rem;
+    }
+
+    .message{
+        font-size:0.95rem;
+    }
+
+    .quote{
+        font-size:1.5rem;
+    }
+
+    .heart,
+    .heart::before,
+    .heart::after{
+        width:90px;
+        height:90px;
+    }
+
+    .heart::before{
+        top:-45px;
+    }
+
+    .heart::after{
+        left:45px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div class="stars" id="stars"></div>
+
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1 class="main-title">
+            Touch My Heart ❤️
+        </h1>
+
+        <p class="sub">
+            A special message for someone special...
+        </p>
+
+        <div class="heart-wrapper">
+            <div class="heart" onclick="openMessage()"></div>
+        </div>
+
+        <div class="message-box" id="messageBox">
+
+            <div class="message" id="typedText"></div>
+
+            <div class="quote">
+                Happy Birthday Akka ❤️
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Music -->
+
+<audio id="music" loop>
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_c8c8a73467.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+/* Stars */
+
+const stars = document.getElementById("stars");
+
+for(let i=0;i<120;i++){
+
+    const star = document.createElement("div");
+
+    star.classList.add("star");
+
+    star.style.left = Math.random()*100 + "%";
+    star.style.top = Math.random()*100 + "%";
+
+    star.style.animationDuration = (1 + Math.random()*3) + "s";
+
+    stars.appendChild(star);
+}
+
+/* Floating Hearts */
+
+for(let i=0;i<35;i++){
+
+    const heart = document.createElement("div");
+
+    heart.classList.add("float-heart");
+
+    heart.innerHTML = "❤";
+
+    heart.style.left = Math.random()*100 + "%";
+
+    heart.style.fontSize = (15 + Math.random()*25) + "px";
+
+    heart.style.animationDuration = (5 + Math.random()*8) + "s";
+
+    document.body.appendChild(heart);
+}
+
+/* Typing Message */
+
+const text = `Happy Birthday Akka ❤️
+
+අපි අතර රණ්ඩු තිබ්බා...
+තරහා තිබ්බා...
+හිත් රිදවීම් තිබ්බා...
+
+ඒත් ඒ හැමදේම අතරෙත්
+මගේ හිතේ ඔයාට තිබ්බ තැන
+කවදාවත් වෙනස් උනේ නැ.
+
+මම සමහර වෙලාවට තරහ වෙන්නෙ
+ඔයාව පාලනය කරන්න නෙවෙයි...
+ඔයාට වරදක් වෙනවට බය නිසා.
+
+දැන් ටික කාලෙකට
+ඔයා මග ඇරිලා වගේ දැනෙනවා...
+ඒ feeling එක
+මගේ හිතට ගොඩක් රිදෙනවා akka.
+
+ඔයා මගේ කෙනෙක් නොවුනත්...
+මගේ හිතේ ලොකු තැනක්
+හැමදාම ඔයාට තියෙනවා.
+
+මාව මතක තිබ්බත් නැතත්...
+ඔයා හැමදාම
+සතුටින් ඉන්න ඕනෙ ❤️`;
+
+let started = false;
+
+function openMessage(){
+
+    if(started) return;
+
+    started = true;
+
+    document.getElementById("messageBox").style.display = "block";
+
+    let i = 0;
+
+    function typing(){
+
+        if(i < text.length){
+
+            document.getElementById("typedText").innerHTML += text.charAt(i);
+
+            i++;
+
+            setTimeout(typing,35);
+        }
+    }
+
+    typing();
+}
+
+/* Music */
+
+const music = document.getElementById("music");
+
+function toggleMusic(){
+
+    if(music.paused){
+        music.play();
+    }else{
+        music.pause();
+    }
+}
+
+</script>
+
+</body>
+</html>
